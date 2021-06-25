@@ -6,7 +6,7 @@
 | 001  | Two Sum                          |                                                              | 2021.06.14 |
 | 002  | Add Two Numbers                  |                                                              | 2021.06.17 |
 | 003  | Longest Substring Without Repeat |                                                              | 2021.06.17 |
-| 004  | Median of Two Sorted Arrays      | [分割线](/Users/polly/Downloads/Typora_Workspace/LeetCode/004 寻找两个有序数组的中位数.md) | 2021.06.18 |
+| 004  | Median of Two Sorted Arrays      | 分割线 | 2021.06.18 |
 | 005  | Longest Palindromic Substring    |                                                              | 2021.06.18 |
 | 006  | ZigZag Conversion                |                                                              | 2021.06.19 |
 | 007  | Reverse Integer                  |                                                              | 2021.06.18 |
@@ -22,7 +22,7 @@
 | 096  | Num Trees                        | DP                                                           | 2021.06.23 |
 | 121  | Max Profit                       | DP                                                           | 2021.06.24 |
 | 122  | Max Profit II                    | DP                                                           | 2021.06.24 |
-| 152  | Max Product                      | [DP](152 Max Product.md)                                     | 2021.06.21 |
+| 152  | Max Product                      | DP               | 2021.06.21 |
 | 198  | Rob                              | DP                                                           | 2021.06.23 |
 
 
