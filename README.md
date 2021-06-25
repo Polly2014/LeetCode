@@ -6,7 +6,7 @@
 | 001  | Two Sum                          |                                                              | 2021.06.14 |
 | 002  | Add Two Numbers                  |                                                              | 2021.06.17 |
 | 003  | Longest Substring Without Repeat |                                                              | 2021.06.17 |
-| 004  | Median of Two Sorted Arrays      | [分割线](/Users/polly/Downloads/Typora_Workspace/LeetCode/004 寻找两个有序数组的中位数.md) | 2021.06.18 |
+| 004  | Median of Two Sorted Arrays      | 分割线 | 2021.06.18 |
 | 005  | Longest Palindromic Substring    |                                                              | 2021.06.18 |
 | 006  | ZigZag Conversion                |                                                              | 2021.06.19 |
 | 007  | Reverse Integer                  |                                                              | 2021.06.18 |
