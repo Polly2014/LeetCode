@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-06-27 23:10:52
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-06-27 23:35:22
+# @Last Modified time: 2021-06-28 21:37:55
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -17,6 +17,6 @@ class Solution:
                 return [0, 0]
             leaf_l = robTree(node.left)
             leaf_r = robTree(node.right)
-            return [node.val + leaf_l[0] + leaf_r[0], max(leaf_l) + max(leaf_r)]
+            return [max(leaf_l) + max(leaf_r), node.val + leaf_l[0] + leaf_r[0]]
 
-        return robTree(root)
+        return max(robTree(root))
