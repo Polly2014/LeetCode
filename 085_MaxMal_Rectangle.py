@@ -2,12 +2,29 @@
 # @Author: Polly
 # @Date:   2021-06-28 23:59:48
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-07-03 00:13:35
+# @Last Modified time: 2021-07-03 16:50:50
 from typing import List
 
 
 class Solution:
+    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+        if len(matrix) == 0 or len(matrix[0]) == 0:
+            return 0
+        m, n = len(matrix), len(matrix[0])
 
+        heights = [[0 for _ in range(n + 1)] for _ in range(m + 1)]
+        dp = [[[0] * (m + 1) for _ in range(n + 1)]for _ in range(m + 1)]
+        ans = 0
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if matrix[i - 1][j - 1] == '0':
+                    continue
+                heights[i][j] = heights[i - 1][j] + 1
+                for k in range(1, heights[i][j] + 1):
+                    dp[i][j][k] = dp[i][j - 1][k] + k
+                    ans = max(ans, dp[i][j][k])
+        return ans
+    '''
     def maximalRectangle(self, matrix: List[List[str]]) -> int:
         def compute(x):
             return x[0] * x[1]
@@ -38,12 +55,13 @@ class Solution:
                         dp[i][j] = [max(up[0], 1), up[1] + 1] if compute(up) > compute(left) else [left[0] + 1, max(left[1], 1)]
                     else:
                         dp[i][j] = [min(left[0], dp[i - 1][j - 1][0]) + 1, min(up[1], dp[i - 1][j - 1][1]) + 1]
-                    # if compute(left) + 1 > compute(dp[i][j]):
-                    #     dp[i][j] = [left[0] + 1, 1]
-                    # if compute(up) + 1 > compute(dp[i][j]):
-                    #     dp[i][j] = [1, up[1] + 1]
+                        if compute(left) + 1 > compute(dp[i][j]):
+                            dp[i][j] = [left[0] + 1, 1]
+                        if compute(up) + 1 > compute(dp[i][j]):
+                            dp[i][j] = [1, up[1] + 1]
                 ans = dp[i][j] if compute(dp[i][j]) > compute(ans) else ans
-        return dp
+        return compute(ans)
+    '''
 
 
 if __name__ == '__main__':
