@@ -1,5 +1,4 @@
-# LeetCode
-刷刷更健康
+# 总记录
 
 | No.  | Problem                          | Idea     | Date       |
 | ---- | -------------------------------- | -------- | ---------- |
@@ -21,15 +20,23 @@
 | 064  | Min Path Sum                     | DP       | 2021.06.21 |
 | 070  | Climb Stairs                     | DP       | 2021.06.21 |
 | 072  | Min Distance                     | DP       | 2021.06.23 |
+| 085  | Maxmal Rectangle                 | DP       | 2021.06.28 |
 | 096  | Num Trees                        | DP       | 2021.06.23 |
+| 118  | Generate (杨辉三角)              | Math     | 2021.07.03 |
 | 121  | Max Profit                       | DP       | 2021.06.24 |
 | 122  | Max Profit II                    | DP       | 2021.06.24 |
 | 123  | Max Profit III                   | DP       | 2021.06.25 |
+| 139  | Word Break                       | DP       | 2021.06.28 |
 | 152  | Max Product                      | DP       | 2021.06.21 |
 | 198  | Rob                              | DP       | 2021.06.23 |
 | 213  | Rob II                           | DP       | 2021.06.27 |
 | 221  | Maxmal Square                    | DP       | 2021.06.28 |
+| 233  | Count Digit One                  | DP       | 2021.07.05 |
 | 300  | Length Of LIS                    | DP       | 2021.06.28 |
 | 337  | Rob III                          | DP       | 2021.06.27 |
+|      |                                  |          |            |
+| 200  | Num Islands                      | DFS      | 2021.07.03 |
+|      |                                  |          |            |
+| 645  | Find Error Nums                  | Math     | 2021.07.04 |
 
 
