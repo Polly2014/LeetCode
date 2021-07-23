@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-07-21 23:16:42
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-07-21 23:22:52
+# @Last Modified time: 2021-07-23 10:00:48
 from typing import List
 
 
@@ -12,7 +12,7 @@ class Solution:
         dp = [False] * n
         dp[0] = True
         for i in range(1, n):
-            for j in range(i):
+            for j in range(i-1,-1,-1):
                 if dp[j] == True and nums[j] >= i - j:
                     dp[i] = True
         return dp[n - 1]
