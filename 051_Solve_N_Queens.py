@@ -2,11 +2,13 @@
 # @Author: Polly
 # @Date:   2021-08-03 20:56:15
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-08-04 23:13:51
+# @Last Modified time: 2021-08-04 23:22:59
 from typing import List
 
 
 class Solution:
+    '''
+    # BT
     def solveNQueens(self, n: int) -> List[List[str]]:
         ans = []
         chessboard = [['.'] * n for _ in range(n)]
@@ -42,6 +44,20 @@ class Solution:
             return True
         backtracking(n, 0, chessboard)
         return ans
+    '''
+
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        def DFS(queens, xy_dif, xy_sum):
+            p = len(queens)
+            if p == n:
+                result.append(queens)
+                return
+            for q in range(n):
+                if not in queens and p - q not in xy_dif and p + q not in xy_sum:
+                    DFS(queens + [q], xy_dif + [p - q], xy_sum + [p + q])
+            result = []
+            DFS([], [], [])
+            return [['.' * i + 'Q' + '.' * (n - i - 1) for i in sol] for sol in result]
 
 
 if __name__ == '__main__':
