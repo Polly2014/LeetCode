@@ -2,24 +2,42 @@
 # @Author: Polly
 # @Date:   2021-08-12 23:05:13
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-08-13 01:33:56
+# @Last Modified time: 2021-08-13 01:48:11
 from typing import List
 
 
 class Solution:
+    # def findSubsequences(self, nums: List[int]) -> List[List[int]]:
+    #     n = len(nums)
+    #     ans, sub_seq = [], []
+
+    #     def BackTrack(nums, idx_start):
+    #         if len(sub_seq) > 1 and sub_seq not in ans:
+    #             ans.append(sub_seq[:])
+    #         for i in range(idx_start, n):
+    #             if not sub_seq or nums[i] >= sub_seq[-1]:
+    #                 sub_seq.append(nums[i])
+    #                 BackTrack(nums, i + 1)
+    #                 sub_seq.pop()
+    #     BackTrack(nums, 0)
+    #     return ans
     def findSubsequences(self, nums: List[int]) -> List[List[int]]:
         n = len(nums)
         ans, sub_seq = [], []
 
-        def BackTrack(nums, idx_start):
-            if len(sub_seq) > 1 and sub_seq not in ans:
+        def BackTrack(idx_start, sub_seq):
+            repeat = []
+            if len(sub_seq) > 1:
                 ans.append(sub_seq[:])
             for i in range(idx_start, n):
+                if nums[i] in repeat:
+                    continue
                 if not sub_seq or nums[i] >= sub_seq[-1]:
+                    repeat.append(nums[i])
                     sub_seq.append(nums[i])
-                    BackTrack(nums, i + 1)
+                    BackTrack(i + 1, sub_seq)
                     sub_seq.pop()
-        BackTrack(nums, 0)
+        BackTrack(0, [])
         return ans
     # def findSubsequences(self, nums: List[int]) -> List[List[int]]:
     #     n = len(nums)
