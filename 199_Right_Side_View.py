@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-08-20 18:48:03
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-08-20 20:20:18
+# @Last Modified time: 2021-08-20 23:03:15
 from typing import List
 from collections import deque
 from pprint import pprint
@@ -28,6 +28,7 @@ def creatBTree(data, index):
 
 
 class Solution:
+    # BFS
     def rightSideView(self, root: TreeNode) -> List[int]:
         if not root:
             return []
@@ -43,6 +44,8 @@ class Solution:
                 if node.right:
                     q.append(node.right)
         return ans
+    # DFS
+    def rightSideView(self, root: TreeNode) -> List[int]:
 
 
 if __name__ == '__main__':
