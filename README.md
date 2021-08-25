@@ -16,6 +16,9 @@
 | 019  | Remove Nth From End              | Link List       | 2021.07.23 |
 |      |                                  |                 |            |
 | 022  | Generate Parenthesis             | DP              | 2021.08.14 |
+| 031  | Next Permutation                 |                 | 2021.08.20 |
+| 033  | Combination Sum                  | BT \| DFS       | 2021.08.21 |
+| 040  | Combination Sum 2                | BT \| DFS       | 2021.08.21 |
 | 042  | Trap                             | DP              | 2021.07.31 |
 | 044  | Is Match                         | DP              | 2021.07.31 |
 | 045  | Jump                             | DP              | 2021.06.27 |
@@ -40,12 +43,15 @@
 | 122  | Max Profit II                    | DP              | 2021.06.24 |
 | 123  | Max Profit III                   | DP              | 2021.06.25 |
 | 139  | Word Break                       | DP              | 2021.06.28 |
+| 145  | Postorder Traversal              | DFS \| BT       | 2021.08.20 |
 | 152  | Max Product                      | DP              | 2021.06.21 |
 | 188  | Max Profit IV                    |                 |            |
 | 198  | Rob                              | DP              | 2021.06.23 |
+| 199  | Right Side View                  | BFS             | 2021.08.20 |
 | 213  | Rob II                           | DP              | 2021.06.27 |
 | 221  | Maxmal Square                    | DP              | 2021.06.28 |
 | 233  | Count Digit One                  | DP              | 2021.07.05 |
+| 236  | Lowest Common Ancestor           | Tree            | 2021.08.24 |
 | 300  | Length Of LIS                    | DP              | 2021.06.28 |
 | 313  | Nth Super Ugly Number            | DP              | 2021.08.09 |
 | 337  | Rob III                          | DP              | 2021.06.27 |
@@ -56,6 +62,7 @@
 | 400  | Find Nth Number                  | Math            | 2021.08.15 |
 |      |                                  |                 |            |
 | 413  | Number Of Arithmetic Slices      | DP              | 2021.08.10 |
+| 443  | Compress                         | 双指针          | 2021.08.21 |
 | 446  | Number Of Arithmetic Slices      | DP              | 2021.08.11 |
 |      |                                  |                 |            |
 | 455  | Find Content Children            | 贪心            | 2021.07.17 |
@@ -66,6 +73,7 @@
 |      |                                  |                 |            |
 | 516  | Longest Palindrome Subseq        | DP              | 2021.08.12 |
 | 526  | Count Arrangement                | DFS \|  BT      | 2021.08.16 |
+| 543  | Diameter Of Binary Tree          | Tree            | 2021.08.21 |
 | 551  | Check Record                     |                 | 2021.08.17 |
 | 552  | Check Record                     | DP              | 2021.08.18 |
 |      |                                  |                 |            |
@@ -74,13 +82,19 @@
 | 645  | Find Error Nums                  | Math            | 2021.07.04 |
 |      |                                  |                 |            |
 | 695  | Max Area Of Island               | DFS             | 2021.08.07 |
+| 698  | Can Partition K Subsets          | BT              | 2021.08.20 |
 | 743  | Network Delay Time               | DFS             | 2021.08.02 |
+|      |                                  |                 |            |
+| 787  | Find Cheapest Price              | DP              | 2021.08.24 |
 |      |                                  |                 |            |
 | 797  | All Paths Source Target          | DFS, BT         | 2021.08.12 |
 |      |                                  |                 |            |
 | 847  | Shortest Path Length             | BFS             | 2021.08.07 |
+| 856  | Score Of Parentheses             | 分治, Stack     | 2021.08.22 |
 |      |                                  |                 |            |
 | 912  | Sort Array                       | Sort            | 2021.07.18 |
+|      |                                  |                 |            |
+| 987  | Escape Ghosts                    | Math            | 2021.08.22 |
 |      |                                  |                 |            |
 | 1337 | K Weakest Rows                   | hash+sort\|二分 | 2021.08.01 |
 |      |                                  |                 |            |
