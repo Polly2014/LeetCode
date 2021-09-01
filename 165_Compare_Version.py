@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-01 10:14:33
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-01 10:44:20
+# @Last Modified time: 2021-09-01 10:48:54
 class Solution:
     def compareVersion(self, version1: str, version2: str) -> int:
         v1, v2 = version1.split('.'), version2.split('.')
@@ -21,8 +21,19 @@ class Solution:
                 ans = -1
                 break
         return ans
-        # print(v)
-        # print(ans)
+
+    def compareVersion(self, version1: str, version2: str) -> int:
+        v1, v2 = version1.split('.'), version2.split('.')
+        m, n = len(v1), len(v2)
+        if m > n:
+            v2 += ['0'] * (m - n)
+        else:
+            v1 += ['0'] * (n - m)
+        v = list(zip(map(int, v1), map(int, v2)))
+        for x, y in v:
+            if x != y:
+                return 1 if x > y else -1
+        return 0
 
 
 if __name__ == '__main__':
