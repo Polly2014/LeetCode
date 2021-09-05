@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Polly
 # @Date:   2021-09-04 18:38:55
-# @Last Modified by:   Polly
-# @Last Modified time: 2021-09-04 19:55:01
+# @Last Modified by:   polly
+# @Last Modified time: 2021-09-05 15:34:11
 from typing import List
 # Definition for a binary tree node.
 
@@ -22,6 +22,6 @@ class Solution:
 
         idx = inorder.index(postorder[-1])
         root.left = self.buildTree(inorder[:idx], postorder[:idx])
-        root.right = self.buildTree(inorder[idx + 1:], postorder[idx + 1:-1])
+        root.right = self.buildTree(inorder[idx + 1:], postorder[idx:-1])
 
         return root

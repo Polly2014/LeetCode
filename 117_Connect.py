@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: Polly
 # @Date:   2021-09-04 17:06:15
-# @Last Modified by:   Polly
-# @Last Modified time: 2021-09-04 17:15:21
+# @Last Modified by:   polly
+# @Last Modified time: 2021-09-05 15:34:11
 from typing import List
 # Definition for a Node.
 
@@ -18,7 +18,7 @@ class Node:
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
-            return []
+            return
         ans = []
         q = [root]
         while q:
