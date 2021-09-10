@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-09 22:39:52
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-10 00:01:15
+# @Last Modified time: 2021-09-10 00:26:23
 from typing import List
 
 
@@ -34,16 +34,19 @@ class Solution:
                 mid = ' ' * avg_space if left else ''
                 right = (' ' * avg_space).join(line[extra_sapce + 1:])
                 ans.append(left + mid + right)
-                print(length_words, avg_space, extra_sapce)
-        print(line_list)
-        print(ans)
+        #         print(length_words, avg_space, extra_sapce)
+        # print(line_list)
+        # print(ans)
         # 第三步，处理最后一行，加入空格填充
-        line = line_list[-1]
-        if len(line) == 1:
-            ans.append(line[0] + ' ' * (maxWidth - len(line[0])))
-        else:
-            text = ' '.join(line)
-            ans.append(text + ' ' * (maxWidth - len(text)))
+        text = ' '.join(line_list[-1])
+        ans.append(text + ' ' * (maxWidth - len(text)))
+        # 第三步 (写法二)
+        # line = line_list[-1]
+        # if len(line) == 1:
+        #     ans.append(line[0] + ' ' * (maxWidth - len(line[0])))
+        # else:
+        #     text = ' '.join(line)
+        #     ans.append(text + ' ' * (maxWidth - len(text)))
         # 第四部，合并最终结果
         return ans
 
