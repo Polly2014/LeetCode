@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-08-20 10:44:17
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-08-26 11:08:08
+# @Last Modified time: 2021-09-11 22:01:22
 from typing import List
 # Definition for a binary tree node.
 
@@ -38,8 +38,11 @@ class Solution:
 
         # 方法二：DFS
         def DFS(node, count):
+            # 空节点判断
             if not root:
                 return
+            # 叶子节点判断
             if not root.left and not root.right and count == root.val:
                 return True
+            # 问题规模可缩小，DFS表示当前传入节点为根节点，到其叶子节点是否存在路径和为传入的长度值（返回True|False）
             return DFS(root.left, count - root.val) or DFS(root.right, count - root.val)
