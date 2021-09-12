@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-11 21:59:31
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-11 22:27:45
+# @Last Modified time: 2021-09-11 22:31:29
 
 class Solution:
     def findIntegers(self, n: int) -> int:
@@ -19,6 +19,13 @@ class Solution:
                 if i > 0 and n_bin[i - 1] == '1':
                     return ans
         return ans + 1
+
+    @lru_cache(None)
+    def findIntegers(self, n: int) -> int:
+        if n <= 3:
+            return n + 1 if n < 3 else n
+        bits = len(bin(n)) - 2
+        return self.findIntegers((1 << (bits - 1)) - 1) + (self.findIntegers((1 << (bits - 2)) - 1) if (n >> (bits - 2)) & 1 else self.findIntegers(n - (1 << (bits - 1))))
 
 
 if __name__ == '__main__':
