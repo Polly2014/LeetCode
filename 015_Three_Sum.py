@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-06-27 19:08:38
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-14 10:28:07
+# @Last Modified time: 2021-09-14 15:34:18
 from typing import List
 from pysnooper import snoop
 
@@ -37,5 +37,9 @@ class Solution:
 
 
 if __name__ == '__main__':
-    s = Solution()
-    print(s.threeSum([-3]))
+    # s = Solution()
+    # print(s.threeSum([-3]))
+    import torch
+    p = torch.nn.CrossMapLRN2d(size=5, alpha=0.0001, beta=0.75, k=1.0)
+    n = torch.randn((1, 3, 224, 224))
+    print(p(n).shape)
