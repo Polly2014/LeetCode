@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-02 23:47:30
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-17 16:22:39
+# @Last Modified time: 2021-09-17 16:25:11
 from typing import List
 from pysnooper import snoop
 
@@ -52,7 +52,6 @@ class Solution:
             # 找到
             if startIndex == k - 1:
                 return True
-            result = False
             # 搜索回溯
             board[x][y] = '#'
             for xx, yy in [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]:
@@ -60,7 +59,7 @@ class Solution:
                     if DFS(xx, yy, startIndex + 1):
                         return True
             board[x][y] = ch
-            return result
+            return False
         # 获取行数、列数、单词长度
         m, n, k = len(board), len(board[0]), len(word)
         # 遍历，以每个单元格作为起点进行搜索
