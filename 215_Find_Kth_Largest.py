@@ -2,9 +2,10 @@
 # @Author: Polly
 # @Date:   2021-09-01 23:34:26
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-01 23:49:43
+# @Last Modified time: 2021-09-19 13:50:36
 from typing import List
-
+import heapq
+import random
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
@@ -34,3 +35,17 @@ class Solution:
             nums[r] = nums[l]
         nums[l] = pivot
         return l
+
+    # 大根堆
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        HQ = []
+        for num in nums:
+            heapq.heappush(HQ, -num)
+        for _ in range(k - 1):
+            heapq.heappop(HQ)
+        return -HQ[0]
+
+    # 分治
+    # def findKthLargest(self, nums: List[int], k: int) -> int:
+    #     def quickSelect(nums, left, right, k):
+    #         pivot = random.randint(left, right)
