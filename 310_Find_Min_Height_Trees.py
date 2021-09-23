@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-23 19:26:32
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-23 19:59:33
+# @Last Modified time: 2021-09-23 20:04:11
 from typing import List
 from collections import defaultdict
 from queue import deque
@@ -19,7 +19,7 @@ class Solution:
         # 申请变量，用作队列，并将度为1的节点加入队列
         Q = deque([u for u, v in dict_adj.items() if len(v) == 1])
         # 存放结果
-        ans = None
+        ans = []
         # 开始循环遍历队列，将度维1的节点移除，并更新节点的度，同时将更新后度为1的节点加入队列
         while Q:
             ans = Q.copy()
@@ -30,7 +30,7 @@ class Solution:
                     if len(dict_adj[v]) == 1:
                         Q.append(v)
                 dict_adj.pop(u)
-        return list(ans)
+        return list(ans) if ans else[0]
         # print(dict_adj)
 
 
