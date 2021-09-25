@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-24 20:51:54
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-24 21:05:41
+# @Last Modified time: 2021-09-24 23:10:44
 
 
 # Definition for a Node.
@@ -15,7 +15,7 @@ class Node:
 
 
 class Solution:
-        # 递归
+    # 递归
     def flatten(self, head: 'Node') -> 'Node':
         dummy = Node(0)
         dummy.next = head
@@ -35,6 +35,51 @@ class Solution:
                     tmp.prev = head
                 head = tmp
         return dummy.next
+
+    # 递归优化
+    def flatten(self, head: 'Node') -> 'Node':
+        def DFS(head):
+            last = head
+            while head:
+                if head.child == None:
+                    last = head
+                    head = head.next
+                else:
+                    tmp = head.next
+                    childLast = DFS(head.child)
+                    head.next = head.child
+                    head.child.prev = head
+                    head.child = None
+                    if childLast:
+                        childLast.next = tmp
+                    if tmp:
+                        tmp.prev = childLast
+                    last = head
+                    head = childLast
+            return last
+        DFS(head)
+        return head
+
+    # 迭代
+    def flatten(self, head: 'Node') -> 'Node':
+        cur = head
+        while cur:
+            # 遇到包含child的节点
+            if cur.child:
+                # 断开原链表
+                nxt = cur.next
+                child = cur.child
+                cur.next = child
+                cur.child = None
+                # 重新拼接
+                child.prev = cur
+                while child.next:
+                    child = child.next
+                child.next = nxt
+                if nxt:
+                    nxt.prev = child
+            cur = cur.next
+        return head
 
 
 if __name__ == '__main__':
