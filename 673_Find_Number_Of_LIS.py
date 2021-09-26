@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-09-20 14:03:46
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-09-20 15:29:27
+# @Last Modified time: 2021-09-25 17:05:41
 from typing import List
 
 
@@ -16,7 +16,7 @@ class Solution:
         for i in range(1, n):
             for j in range(i):
                 if nums[i] > nums[j]:
-                	# 更新cnt
+                        # 更新cnt
                     if dp[j] + 1 > dp[i]:
                         # dp[i] = dp[j] + 1
                         cnt[i] = cnt[j]
@@ -24,6 +24,7 @@ class Solution:
                         cnt[i] += cnt[j]
                     # 更新dp
                     dp[i] = max(dp[i], dp[j] + 1)
+                print('i={},j={},cnt={}'.format(i, j, cnt))
         print(nums)
         print(dp)
         print(cnt)
