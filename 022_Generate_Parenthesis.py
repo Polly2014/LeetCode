@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-08-14 22:39:25
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-08-14 23:15:50
+# @Last Modified time: 2021-10-10 16:38:48
 from typing import List
 
 
@@ -24,6 +24,7 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ans = []
 
+        # 可变量：左括号数量、右括号数量、生成结果
         def DFS(path, num_left, num_right):
             if num_left == num_right == 0:
                 ans.append(path)
@@ -34,8 +35,25 @@ class Solution:
                 DFS(path + '(', num_left - 1, num_right)
             if num_right > 0:
                 DFS(path + ')', num_left, num_right - 1)
-        DFS('', 5, 5)
+        DFS('', n, n)
         return(ans)
+
+    # DFS 2021-10-10
+
+    def generateParenthesis(self, n: int) -> List[str]:
+        ans = []
+
+        # 可变量：左括号数量、右括号数量、生成结果，数量与结果均可用于判定是否终止
+        def DFS(path, num_left, num_right):
+            if num_left > n or num_right > num_left:
+                return
+            if len(path) == 2 * n:
+                ans.append(path)
+                return
+            DFS(path + '(', num_left + 1, num_right)
+            DFS(path + ')', num_left, num_right + 1)
+        DFS('', 0, 0)
+        return ans
 
 
 if __name__ == '__main__':
