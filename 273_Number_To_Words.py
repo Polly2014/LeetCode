@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-10-11 21:48:56
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-10-11 22:23:43
+# @Last Modified time: 2021-10-14 10:11:58
 singles = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
 teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
 tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
@@ -62,7 +62,7 @@ class Solution:
             num %= million
         if num >= thousand:
             if len(s):
-                s += ''
+                s += ' '
             s += self.numberToWords(num // thousand)
             s += ' Thousand'
             num %= thousand
