@@ -2,11 +2,11 @@
 # @Author: Polly
 # @Date:   2021-10-19 10:36:00
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-10-19 23:27:54
+# @Last Modified time: 2021-10-19 23:40:29
 from collections import defaultdict
 from queue import deque
 class WordDictionary:
-
+	# Dict来解
     def __init__(self):
         self.trie = {}
 
