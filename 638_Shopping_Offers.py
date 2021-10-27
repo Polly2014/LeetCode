@@ -2,7 +2,7 @@
 # @Author: Polly
 # @Date:   2021-10-24 20:31:18
 # @Last Modified by:   Polly
-# @Last Modified time: 2021-10-24 21:43:42
+# @Last Modified time: 2021-10-24 22:21:00
 from typing import List
 from functools import lru_cache
 class Solution:
@@ -50,5 +50,9 @@ class Solution:
         return DFS(tuple(needs))
 
     # # 一句话
-    # def shoppingOffers(self, price: List[int], special: List[List[int]], needs: List[int]) -> int:
-    #   return min([sum(p * n for p, n in zip(price, needs))] + [sp[-1] + self.shoppingOffers(price, special, [n - c for n, c in zip(needs, sp[:-1])]) for sp in special if not any(n < o for n, o in zip(needs, sp))])
+    def shoppingOffers(self, price: List[int], special: List[List[int]], needs: List[int]) -> int:
+      return min([sum(p * n for p, n in zip(price, needs))] + [sp[-1] + self.shoppingOffers(price, special, [n - c for n, c in zip(needs, sp[:-1])]) for sp in special if not any(n < o for n, o in zip(needs, sp))])
+
+if __name__=='__main__':
+    from IPython import embed
+    embed()
